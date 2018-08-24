@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://www.douban.com/note/647142163/?type=like -->
+<html lang="zh-cmn-Hans" class="ua-windows ua-webkit"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+    </style>
+    
+    <meta name="renderer" content="webkit">
+    <meta name="referrer" content="always">
+    <title>
+    LNMP - Warning: require(): open_basedir restriction in effect错误解决方法
+</title>
+    
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT">
+    
+    <script type="text/javascript" defer="" async="" src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/piwik.js"></script><script async="" src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/gtm.js"></script><script type="text/javascript" src="https://img3.doubanio.com/f/adjs/cdc904d1376a43e44bbf399a0aff51973016cd77/ad.release.js" async="true"></script><script type="text/javascript" src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/render_gif.js" async="true"></script><script>var _head_start = new Date();</script>
+    <script src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/jquery.min.js"></script>
+    <script src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/douban.js"></script>
+    <link href="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/douban.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    
+        
+    .ui-tooltip {
+      width: 270px;
+    }
+    .note {
+      margin-bottom: 20px;
+    }
+    .note img {
+      max-width:590px;
+    }
+    .mod-tags {
+      margin-bottom: 20px;
+    }
+    .tabs{font-size:0;letter-spacing:-0.31em;*letter-spacing:normal;word-spacing:-0.43em}.tabs a{display:inline-block;*display:inline;zoom:1;padding:1px 8px;margin-right:5px}.tabs a:link,.tabs a:visited,.tabs a:hover,.tabs a:active{font-size:13px;line-height:1.2;letter-spacing:normal;word-spacing:normal}.tabs a:hover,.tabs a:active{-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.tabs a.on:link,.tabs a.on:visited,.tabs a.on:hover,.tabs a.on:active{color:#fff;background:#83bf73;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.tabs{margin:40px 0 10px;padding-bottom:8px;border-bottom:1px solid #e6e6e6}.tabs a:first-child{padding-left:0}.tabs a:link,.tabs a:visited,.tabs a:hover,.tabs a:active{font-size:14px;color:#37a;background:none}.tabs a.on:link,.tabs a.on:visited,.tabs a.on:hover,.tabs a.on:active{color:#000;background:none}.list,.list .content{overflow:hidden;zoom:1}.list .pic{float:left;margin-right:12px}.list p{margin:8px 0 0 0;background:#f9f9f9;padding:8px}.list .pubtime{position:absolute;top:10px;right:0;color:#999}.list .pic img{width:24px;height:24px}.list ul{margin-top:-15px}.list li{position:relative;padding-top:10px;margin-top:10px;border-top:1px dashed #e6e6e6;overflow:hidden;color:#666}.topic-fav-list .content,.collect-list .content{margin-top:4px;width:70%}.topic-fav-list .pubtime,.collect-list .pubtime{top:14px}.topic-rec-list .pubtime a:link,.topic-rec-list .pubtime a:visited,.topic-fav-list .pubtime a:link,.topic-fav-list .pubtime a:visited,.topic-donate-list .pubtime a:link,.topic-donate-list .pubtime a:visited{color:#666}.topic-rec-list .pubtime a:hover,.topic-rec-list .pubtime a:active,.topic-fav-list .pubtime a:hover,.topic-fav-list .pubtime a:active,.topic-donate-list .pubtime a:hover,.topic-donate-list .pubtime a:active{color:#fff}.topic-rec-list p{padding:0}.topic-rec-list p a{display:block;background:#f9f9f9;padding:8px}.topic-rec-list p a:link,.topic-rec-list p a:visited{color:#666}.topic-rec-list p a:hover,.topic-rec-list p a:active{background-color:#f6f6f6;color:#666}.donation-total{padding:7px 0 15px;line-height:1;border-bottom:1px dashed #e6e6e6;color:#666}.donation-total+.list ul{margin-top:-11px}
+
+    .copyright-claim.repost {
+      color: #999;
+      font-size: 13px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .copyright-claim.repost .rating_helper_wrap {
+      display: none;
+      position: absolute;
+      margin-top: -2px;
+    }
+    .copyright-claim.repost:hover .rating_helper_wrap {
+      display: inline-block;
+    }
+    .copyright-claim.repost .rating_helper_wrap a {
+      background: none;
+    }
+    .copyright-claim.repost .rating_helper_wrap .rating_helper_content {
+      width: 235px;
+    }
+    #link-report_note .report a {
+      font-size: 13px;
+      visibility: visible;
+    }
+    #link-report_note .report {
+      float: right;
+      white-space: normal;
+    }
+    #link-report_note {
+      overflow: hidden;
+    }
+    .via {
+      float: left;
+      font-size: 13px;
+      color: #bbb;
+    }
+    .via a {
+      color: #bbb;
+      font-size: 13px;
+    }
+    .via a:hover {
+      color: #fff;
+    }
+    #dale_personal_note_bottom_super_banner {
+      padding-top: 20px;
+    }
+    .video-player {
+        margin: 10px 0;
+        text-align: center;
+    }
+    .video-title {
+        color: #999;
+    }
+    .comment-item .comment-report { position: static !important; display: inline-block; }
+    .comment-item .op-lnks > a { margin-right: 10px; }
+
+    </style>
+    
+    <link rel="stylesheet" media="only print" href="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/print.css">
+    <meta name="mobile-agent" content="format=html5; url=https://m.douban.com/note/647142163">
+
+    
+
+
+    <meta property="og:title" content="LNMP - Warning: require(): open_basedir restriction in effect错误解决方法">
+    <meta property="og:site_name" content="豆瓣">
+    <meta property="og:url" content="https://www.douban.com/note/647142163/">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="出现此类问题一般为open_basedir的问题(open_basedir的值来设置限制访问的目录或删除来移除防跨目录的设置。) Warning: require(): open_basedir restriction in effect. File(/home/wwwroot/xlboo.com/bootstrap...">
+        <meta property="og:image" content="https://img3.doubanio.com/view/note/large/public/p46948546.jpg">
+    <link type="text/css" href="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/jquery.ui.tooltip.css" rel="stylesheet">
+    <link type="text/css" href="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/tooltip.css" rel="stylesheet">
+    <link type="text/css" href="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/tag.css" rel="stylesheet">
+    <script type="text/javascript" src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/do.js" data-cfg-autoload="false"></script>
+    <script type="text/javascript" src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/jquery.ui.min.js"></script>
+    <script type="text/javascript" src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/jquery.ui.tooltip.js"></script>
+    <style>
+      .note .cc table, .note .ll table, .note .rr table { width: auto }
+    </style>
+
+    <link rel="stylesheet" href="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/1ee5004b8126aa7c.css">
+    <script></script>
+
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+<style type="text/css" abt="234"></style><style type="text/css">.dou-preview-image-zoom-in{cursor:zoom-in}.dou-preview-image-link-open{position:fixed;z-index:12;width:14px;height:14px}.dou-preview-image-link-open:link,.dou-preview-image-link-open:visited{background:transparent url("data:image/svg+xml;charset=utf-8,%3Csvg width='14' height='14' viewBox='-1 -1 15 15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.05 0H1.613S1.144.035.796.41C.447.782.454 1.3.454 1.3L.417 11.815s.014.502.33.843c.316.342.747.342.747.342h10.28s.484-.043.748-.417c.264-.373.256-.823.256-.823V8.848m-7.883-.736L12.634.134M7.8 0h4.91v4.867' stroke='%23aaa' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E") no-repeat;opacity:.6}.dou-preview-image-link-open:active,.dou-preview-image-link-open:hover{opacity:1;background-color:transparent}.dou-preview-image-popup{position:absolute;z-index:10;top:0;height:400px;left:0;right:0;background-color:#fff}.dou-preview-image-popup-image{position:absolute;z-index:11;cursor:zoom-out}</style><script>//console.log('a')
+</script><script>//remove 17173 video ad
+doAdblock();
+function doAdblock(){
+    (function() {
+        function A() {}
+        A.prototype = {
+            rules: {
+                '17173_in':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFile(Customer)?\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_in_20150522.swf"
+                },
+                '17173_out':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/PreloaderFileFirstpage\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_out_20150522.swf"
+                },
+                '17173_live':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream(_firstpage)?\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173_stream_20150522.swf"
+                },
+                '17173_live_out':{
+                    'find':/http:\/\/f\.v\.17173cdn\.com\/(\d+\/)?flash\/Player_stream_(custom)?Out\.swf/,
+                    'replace':"http://swf.adtchrome.com/17173.out.Live.swf"
+                }
+            },
+            _done: null,
+            get done() {
+                if(!this._done) {
+                    this._done = new Array();
+                }
+                return this._done;
+            },
+            addAnimations: function() {
+                var style = document.createElement('style');
+                style.type = 'text/css';
+                style.innerHTML = 'object,embed{\
+                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;\
+                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;\
+                -o-animation-duration:.001s;-o-animation-name:playerInserted;\
+                animation-duration:.001s;animation-name:playerInserted;}\
+                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}\
+                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}';
+                document.getElementsByTagName('head')[0].appendChild(style);
+            },
+            animationsHandler: function(e) {
+                if(e.animationName === 'playerInserted') {
+                    this.replace(e.target);
+                }
+            },
+            replace: function(elem) {
+                if(this.done.indexOf(elem) != -1) return;
+                this.done.push(elem);
+                var player = elem.data || elem.src;
+                if(!player) return;
+                var i, find, replace = false;
+                for(i in this.rules) {
+                    find = this.rules[i]['find'];
+                    if(find.test(player)) {
+                        replace = this.rules[i]['replace'];
+                        if('function' === typeof this.rules[i]['preHandle']) {
+                            this.rules[i]['preHandle'].bind(this, elem, find, replace, player)();
+                        }else{
+                            this.reallyReplace.bind(this, elem, find, replace)();
+                        }
+                        break;
+                    }
+                }
+            },
+            reallyReplace: function(elem, find, replace) {
+                elem.data && (elem.data = elem.data.replace(find, replace)) || elem.src && ((elem.src = elem.src.replace(find, replace)) && (elem.style.display = 'block'));
+                var b = elem.querySelector("param[name='movie']");
+                this.reloadPlugin(elem);
+            },
+            reloadPlugin: function(elem) {
+                var nextSibling = elem.nextSibling;
+                var parentNode = elem.parentNode;
+                parentNode.removeChild(elem);
+                var newElem = elem.cloneNode(true);
+                this.done.push(newElem);
+                if(nextSibling) {
+                    parentNode.insertBefore(newElem, nextSibling);
+                } else {
+                    parentNode.appendChild(newElem);
+                }
+            },
+            init: function() {
+                var handler = this.animationsHandler.bind(this);
+                document.body.addEventListener('webkitAnimationStart', handler, false);
+                document.body.addEventListener('msAnimationStart', handler, false);
+                document.body.addEventListener('oAnimationStart', handler, false);
+                document.body.addEventListener('animationstart', handler, false);
+                this.addAnimations();
+            }
+        };
+        new A().init();
+    })();
+}
+//remove baidu search ad
+if(document.URL.indexOf('www.baidu.com') >= 0){
+    if(document && document.getElementsByTagName && document.getElementById && document.body){
+        var aa = function(){
+            var all = document.body.querySelectorAll("#content_left div,#content_left table");
+            for(var i = 0; i < all.length; i++){
+                if(/display:\s?(table|block)\s!important/.test(all[i].getAttribute("style"))){all[i].style.display= "none";all[i].style.visibility='hidden';}
+            }
+            all = document.body.querySelectorAll('.result.c-container[id="1"]');
+            //if(all.length == 1) return;
+            for(var i = 0; i < all.length; i++){
+                if(all[i].innerHTML && all[i].innerHTML.indexOf('广告')>-1){
+                    all[i].style.display= "none";all[i].style.visibility='hidden';
+                }
+            }
+        }
+        aa();
+        document.getElementById('wrapper_wrapper').addEventListener('DOMSubtreeModified',aa)
+    };
+}
+//remove sohu video ad
+if (document.URL.indexOf("tv.sohu.com") >= 0){
+    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};
+}
+//remove 56.com video ad
+if (document.URL.indexOf("56.com") >= 0){
+    if (document.cookie.indexOf("fee_status=true")==-1){document.cookie='fee_status=true'};
+}
+//fore iqiyi enable html5 player function
+if (document.URL.indexOf("iqiyi.com") >= 0){
+    if (document.cookie.indexOf("player_forcedType=h5_VOD")==-1){
+        document.cookie='player_forcedType=h5_VOD'
+        if(localStorage.reloadTime && Date.now() - parseInt(localStorage.reloadTime)<60000){
+            console.log('no reload')
+        }else{
+            location.reload()
+            localStorage.reloadTime = Date.now();
+        }
+    }
+}
+</script><style type="text/css">object,embed{                -webkit-animation-duration:.001s;-webkit-animation-name:playerInserted;                -ms-animation-duration:.001s;-ms-animation-name:playerInserted;                -o-animation-duration:.001s;-o-animation-name:playerInserted;                animation-duration:.001s;animation-name:playerInserted;}                @-webkit-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-ms-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @-o-keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}                @keyframes playerInserted{from{opacity:0.99;}to{opacity:1;}}</style><script src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/ga.js" async="true"></script></head>
+
+<body><div class="ui-overlay-anchor"></div>
+  
+  
+    <script type="text/javascript">var _body_start = new Date();</script>
+    
+  
+
+
+
+    <link href="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/bundle.css" rel="stylesheet" type="text/css">
+
+
+
+<div id="db-global-nav" class="global-nav">
+  <div class="bd">
+    
+<div class="top-nav-info">
+  <a href="https://www.douban.com/accounts/login?source=main" class="nav-login" rel="nofollow">登录</a>
+  <a href="https://www.douban.com/accounts/register?source=main" class="nav-register" rel="nofollow">注册</a>
+</div>
+
+
+    
+<div class="top-nav-doubanapp">
+  <a href="https://www.douban.com/doubanapp/app?channel=top-nav" class="lnk-doubanapp">下载豆瓣客户端</a>
+  <div id="top-nav-appintro" class="more-items">
+    <p class="appintro-title">豆瓣</p>
+    <p class="qrcode">扫码直接下载</p>
+    <div class="download">
+      <a href="https://www.douban.com/doubanapp/redirect?channel=top-nav&amp;direct_dl=1&amp;download=iOS">iPhone</a>
+      <span>·</span>
+      <a href="https://www.douban.com/doubanapp/redirect?channel=top-nav&amp;direct_dl=1&amp;download=Android" class="download-android">Android</a>
+    </div>
+    <div id="doubanapp-tip">
+      <a href="https://www.douban.com/doubanapp/app?channel=qipao" class="tip-link">豆瓣 5.0 全新发布</a>
+      <a href="javascript: void 0;" class="tip-close">×</a>
+    </div>
+  </div>
+</div>
+
+    
+
+
+<div class="global-nav-items">
+  <ul>
+    <li class="on">
+      <a href="https://www.douban.com/" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-main&quot;,&quot;uid&quot;:&quot;0&quot;}">豆瓣</a>
+    </li>
+    <li class="">
+      <a href="https://book.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
+    </li>
+    <li class="">
+      <a href="https://movie.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-movie&quot;,&quot;uid&quot;:&quot;0&quot;}">电影</a>
+    </li>
+    <li class="">
+      <a href="https://music.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-music&quot;,&quot;uid&quot;:&quot;0&quot;}">音乐</a>
+    </li>
+    <li class="">
+      <a href="https://www.douban.com/location" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-location&quot;,&quot;uid&quot;:&quot;0&quot;}">同城</a>
+    </li>
+    <li class="">
+      <a href="https://www.douban.com/group" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-group&quot;,&quot;uid&quot;:&quot;0&quot;}">小组</a>
+    </li>
+    <li class="">
+      <a href="https://read.douban.com/?dcs=top-nav&amp;dcm=douban" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-read&quot;,&quot;uid&quot;:&quot;0&quot;}">阅读</a>
+    </li>
+    <li class="">
+      <a href="https://douban.fm/?from_=shire_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-fm&quot;,&quot;uid&quot;:&quot;0&quot;}">FM</a>
+    </li>
+    <li class="">
+      <a href="https://time.douban.com/?dt_time_source=douban-web_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-time&quot;,&quot;uid&quot;:&quot;0&quot;}">时间</a>
+    </li>
+    <li class="">
+      <a href="https://market.douban.com/?utm_campaign=douban_top_nav&amp;utm_source=douban&amp;utm_medium=pc_web" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-market&quot;,&quot;uid&quot;:&quot;0&quot;}">豆品</a>
+    </li>
+    <li>
+      <a href="https://www.douban.com/note/647142163/?type=like#more" class="bn-more"><span>更多</span></a>
+      <div class="more-items">
+        <table cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td>
+                <a href="https://ypy.douban.com/" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">豆瓣摄影</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+  </ul>
+</div>
+
+  </div>
+</div>
+<script>
+  ;window._GLOBAL_NAV = {
+    DOUBAN_URL: "https://www.douban.com",
+    N_NEW_NOTIS: 0,
+    N_NEW_DOUMAIL: 0
+  };
+</script>
+
+
+
+    <script src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/bundle.js" defer="defer"></script>
+
+
+
+
+  
+
+
+
+    <link href="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/bundle(1).css" rel="stylesheet" type="text/css">
+
+
+
+<div id="db-nav-sns" class="nav">
+  <div class="nav-wrap">
+    <div class="nav-primary">
+     
+      <div class="nav-logo">
+        <a href="https://www.douban.com/">豆瓣社区</a>
+      </div>
+
+      <div class="nav-search">
+  <form action="https://www.douban.com/search" method="get">
+	<fieldset>
+      <legend>搜索：</legend>
+	  <label for="inp-query" style="display: none;">搜索你感兴趣的内容和人...</label>
+	  <div class="inp">
+	    <input type="hidden" name="source" value="suggest">
+		<input id="inp-query" name="q" size="22" maxlength="60" autocomplete="off" value="" placeholder="搜索你感兴趣的内容和人...">
+	  </div>
+	  <div class="inp-btn"><input type="submit" value="搜索"></div>
+	</fieldset>
+  </form>
+</div>
+
+      
+
+<div class="nav-items">
+  <ul>
+    <li><a href="https://www.douban.com/">首页</a></li>
+      <li>
+        <a href="https://www.douban.com/explore">
+          浏览发现
+        </a>
+      </li>
+      <li>
+        <a href="https://www.douban.com/gallery">
+          话题广场
+          <img src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/new_menu.gif" alt="new" style="position: absolute; top: -7px; right: -13px;">
+        </a>
+      </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+</div>
+
+
+
+    <script src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/bundle(2).js" defer="defer"></script>
+
+
+
+
+
+    <div id="wrapper">
+        
+
+        
+<div id="content">
+    
+
+    <div class="grid-16-8 clearfix">
+        
+        
+        <div class="article">
+               
+    
+    
+    
+    <div id="reg-up">
+        <a href="https://www.douban.com/accounts/register" data-source="note" data-key="regpop" data-cookie="1" data-expired="3600000" data-width="478" data-height="480" class="btn-reg lnk-show-reg">快速注册</a>
+    </div>
+    
+    
+    
+    <div id="note-647142163" class="note-container" data-url="https://www.douban.com/note/647142163/" data-author="祥磊部落" data-is-original="0">
+
+    
+    
+    
+
+    
+
+        <div class="note-header note-header-container">
+        <h1>LNMP - Warning: require(): open_basedir restriction in effect错误解决方法</h1>
+
+    
+    <div>
+        <a href="https://www.douban.com/people/bxlme/"><img class="note_author_avatar" width="24" height="24" src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/u65439951-2.jpg" alt="祥磊部落"></a>
+        <a href="https://www.douban.com/people/bxlme/" class="note-author">祥磊部落</a>
+        <span class="pub-date">2017-11-30 05:19:24</span>
+    </div>
+    </div>
+
+
+    
+    <div class="note" id="note_647142163_short" style="display:none;"></div>
+    <div id="note_647142163_full">
+            
+            <div class="note" id="link-report"><div class="cc"><table><tbody><tr><td><img src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/p46948546.jpg" alt=""></td></tr><tr><td align="center" class="wr pl"></td></tr></tbody></table></div> <br>&nbsp;<br>出现此类问题一般为open_basedir的问题(open_basedir的值来设置限制访问的目录或删除来移除防跨目录的设置。)<br>&nbsp;<br>Warning: require(): open_basedir restriction in effect. File(/home/wwwroot/xlboo.com/bootstrap.php) is not within the allowed path(s): (/home/wwwroot/xlboo.com/public/:/tmp/:/proc/) in /home/wwwroot/xlboo.com/public/index.php on line 7<br><br>Warning: require(/home/wwwroot/xlboo.com/bootstrap.php): failed to open stream: Operation not permitted in /home/wwwroot/xlboo.com/public/index.php on line 7<br><br>Fatal error: require(): Failed opening required '/home/wwwroot/xlboo.com/public/../bootstrap.php' (include_path='.:/usr/local/php/lib/php') in /home/wwwroot/xlboo.com/public/index.php on line 7<br>&nbsp;<br>&nbsp;<br>方法一<br>删除user.ini<br>去权后删除即可<br>chattr -i .user.ini<br>此方法限制于当前的站点解决<br>php.ini的说明:<a rel="nofollow" href="https://lnmp.org/faq/lnmp-vhost-add-howto.html#user.ini" target="_blank">https://lnmp.org/faq/lnmp-vhost-add-howto.html#user.ini</a><br>&nbsp;<br>&nbsp;<br>方法二<br>编辑<br>vim /usr/local/nginx/conf/fastcgi.conf<br>&nbsp;<br>删除或注释掉这一行(*注释的话前面加“#”号即可)<br>fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/:/tmp/:/proc/";<br>&nbsp;<br>此方法限制于所有的LNMP站点解决<br>&nbsp;<br>&nbsp;<br>方法三<br>编辑user.ini<br>chattr -i .user.ini<br>vimuser.ini<br>将<br>open_basedir=/home/wwwroot/xlboo.com/:/tmp/:/proc/<br>改为<br>open_basedir=/home/wwwroot/xlboo.com/public/ :/tmp/:/proc/<br>然后<br>chattr +i .user.ini<br>最后重启PHP或者Nginx<br>重启PHP<br>/etc/init.d/php-fpm restart<br>重启Nginx<br>service nginx restart</div>
+            
+    
+
+            <div id="link-report_note">
+            </div>
+            
+
+    </div>
+
+    
+
+    
+
+
+            
+    
+    <div id="note_647142163_footer" class="note-ft">
+        
+        
+        <div class="note-footer-stat">
+          <div class="note-footer-stat-privacy">
+          </div>
+
+          <span class="note-footer-stat-del">
+          </span>
+        </div>
+
+        <div class="sns-bar">
+        
+            &nbsp;
+            <div class="footer-sharing">
+                
+
+
+<div class="action-react">
+    <a class="react-btn react-add j a_show_login" href="https://www.douban.com/accounts/register?reason=like">赞</a>
+</div>
+
+
+                
+
+                
+    
+
+    
+
+    
+
+    <div class="sharing" data-target="{&quot;url&quot;: &quot;http://www.douban.com/note/647142163/&quot;, &quot;desc&quot;: &quot;\u51fa\u73b0\u6b64\u7c7b\u95ee\u9898\u4e00\u822c\u4e3aopen_basedir\u7684\u95ee\u9898(open_basedir\u7684\u503c\u6765\u8bbe\u7f6e\u9650\u5236\u8bbf\u95ee\u7684\u76ee\u5f55\u6216\u5220\u9664\u6765\u79fb\u9664\u9632\u8de8\u76ee\u5f55\u7684\u8bbe\u7f6e\u3002) Warning: require(): open_basedir restriction in effect. File(/home/wwwroot...&quot;, &quot;pic&quot;: &quot;https://img3.doubanio.com/view/note/small/public/p46948546.jpg&quot;, &quot;title&quot;: &quot;LNMP - Warning: require(): open_basedir restriction in effect\u9519\u8bef\u89e3\u51b3\u65b9\u6cd5&quot;}">
+
+        <div class="sharing-button">
+            <div class="sharing-douban">
+                
+    
+
+
+        <div class="rec-sec">
+
+
+    <span class="rec">
+        
+            <a data-user_id="0" href="https://www.douban.com/accounts/register?reason=collect" share-id="647142163" data-mode="plain" data-name="LNMP - Warning: require(): open_based..." data-type="com.douban.people" data-desc="出现此类问题一般为open_basedir的问题(open_basedir的值来设置限制访问的目录或删除来移除防跨目录的设置。) Warning: require(): open_basedir restriction in effect. File(/home/wwwroot..." data-href="https://www.douban.com/note/647142163/" data-image="https://img3.doubanio.com/view/note/small/public/p46948546.webp" data-properties="{&quot;href&quot;:&quot;http:\/\/www.douban.com\/people\/bxlme\/&quot;,&quot;name&quot;:&quot;祥磊部落&quot;,&quot;uid&quot;:&quot;65439951&quot;}" data-redir="https://www.douban.com/static/dshare_proxy.html" data-text="" data-apikey="" data-curl="" data-count="10" data-object_kind="1015" data-object_id="647142163" data-target_type="rec" data-target_action="0" data-action_props="{&quot;note_url&quot;:&quot;http:\/\/www.douban.com\/note\/647142163\/&quot;,&quot;note_title&quot;:&quot;LNMP - Warning: require(): open_based...&quot;,&quot;author_name&quot;:&quot;祥磊部落&quot;}" data-btn_text="转发" data-heading="转发到豆瓣" data-sanity_key="_36d80" class="j a_show_login lnk-sharing lnk-douban-sharing">
+                    
+                            转发
+                    
+            </a>
+    </span>
+
+
+    </div>
+
+            </div>
+            <span class="sharing-indicator"></span>
+        </div>
+
+            <div class="sharing-layer is-hidden">
+                <div class="sharing-wechat">
+                    <span class="sharing-icon__wechat">微信扫码</span>
+                    <div class="sharing-wechat-qrcode"></div>
+                </div>
+
+                
+                <ul class="sharing-list">
+                    <li class="sharing-icon__weibo" data-share="weibo">新浪微博</li>
+                    <li class="sharing-icon__qq" data-share="qq">QQ好友</li>
+                    <li class="sharing-icon__qzone" data-share="qzone">QQ空间</li>
+                </ul>
+            </div>
+            
+
+        
+    </div>
+
+
+            </div>
+            
+            
+        </div>
+    </div>
+
+
+    </div>
+    <div class="clear"></div>
+
+    <div class="tabs" id="sep">
+      <a href="https://www.douban.com/note/647142163/#sep">回应</a>
+      <a href="https://www.douban.com/note/647142163/?type=rec#sep">转发</a>
+      <a href="https://www.douban.com/note/647142163/?type=like#sep" class="on">赞</a>
+      <a href="https://www.douban.com/note/647142163/?type=collect#sep">收藏</a>
+    </div>
+
+    <div class="">
+          
+<div class="list topic-fav-list">
+    <ul>
+        <li class="">
+          <div class="pic">
+            <a href="https://www.douban.com/people/165149122/"><img src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/u165149122-1.jpg" alt="庆丰" class=""></a>
+          </div>
+          <div class="content">
+            <a href="https://www.douban.com/people/165149122/" class="">庆丰</a> 赞了这篇日记
+            <span class="pubtime">2018-04-30 10:35:40</span>
+          </div>
+        </li>
+    </ul>
+</div>
+
+    
+    
+
+    
+
+
+
+    </div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="aside">
+                
+    
+
+
+
+
+
+
+<div class="mod mod-usercard">
+  <div class="pic">
+      <a href="https://www.douban.com/people/bxlme/"><img src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/u65439951-2.jpg" alt="祥磊部落" width="48" height="48"></a>
+  </div>
+  <div class="content">
+    <a href="https://www.douban.com/people/bxlme/">祥磊部落</a>
+        <span class="usercard-loc">(江苏徐州)</span>
+    <p></p>
+    <div class="ft">
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+
+
+
+    <div class="mod">
+        <div id="dale_personal_note_top_right"></div>
+    </div>
+
+    
+    
+    
+        <div class="mod">
+            
+    <h2>
+        祥磊部落的最新日记
+            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+            <span class="pl">&nbsp;(
+                
+                    <a href="https://www.douban.com/people/bxlme/notes" target="_self">全部</a>
+                ) </span>
+    </h2>
+
+            <ul class="note-list">
+                  <li>
+                    <a title="TrafficMonitor -简洁优美的网速监控悬浮窗软件" href="https://www.douban.com/note/664539786/">TrafficMonitor -简洁优美的网速监控悬浮窗软件</a>
+                    
+                  </li>
+                  <li>
+                    <a title="啊噗啊噗 UPUPOO - 国产强大的动态桌面软件" href="https://www.douban.com/note/664505521/">啊噗啊噗 UPUPOO - 国产强大的动态桌面软件</a>
+                    
+                  </li>
+                  <li>
+                    <a title="桌面壁纸软件大全" href="https://www.douban.com/note/664505071/">桌面壁纸软件大全</a>
+                    
+                  </li>
+                  <li>
+                    <a title="雷姆 整点报时 v1.0" href="https://www.douban.com/note/664504331/">雷姆 整点报时 v1.0</a>
+                    
+                  </li>
+                  <li>
+                    <a title="Kaspersky Trial Reset(KRT)  5.1.0.41 卡巴斯基授权重置\备份工具 附Key" href="https://www.douban.com/note/664363263/">Kaspersky Trial Reset(KRT)  5.1.0.41 卡巴斯基授权重置\备份工具 附Key</a>
+                    
+                  </li>
+            </ul>
+        </div>
+
+
+
+    
+
+
+
+
+
+
+<div class="mod">
+    
+    <h2>
+        热门话题
+            &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+            <span class="pl">&nbsp;(
+                
+                    <a href="https://www.douban.com/gallery/" target="_self">去话题广场</a>
+                ) </span>
+    </h2>
+
+
+    <ul>
+        
+            <li class="rec_topics">
+                    <a href="https://www.douban.com/gallery/topic/11772/?from=hot_topic_note" class="rec_topics_name">社恐最绝望的瞬间</a>
+                    
+                    <span class="rec_topics_subtitle">新话题 · 1938人浏览</span>
+            </li>
+            <li class="rec_topics">
+                    <a href="https://erebor.douban.com/redirect/?ad=197849&amp;uid=&amp;bid=ZC-T25SE36o&amp;unit=dale_topic_web_homepage_second&amp;crtr=&amp;mark=&amp;hn=anson43&amp;sig=74f884e7102ddc6016ac934891a4bbab338d1cfe67ba1da6416fb0bf86370b6ea77123a5dd7ad21f3db696c29318ced4d619612ee21458e9eeb2e3bcd4e141f2&amp;pid=debug_f6056603a6fc8ab53f8be3ef254b414c3f49f022&amp;screen_width=0&amp;screen_height=0&amp;target=aHR0cHM6Ly93d3cuZG91YmFuLmNvbS9nYWxsZXJ5L3RvcGljLzExNTM0Lz9kdF9kYXBwPTE=&amp;dumpling=&amp;apple=&amp;mooncake=&amp;icecream=&amp;onion=&amp;chicken=4a581798c2a8cdf77abdfc35cf9dcb86" class="rec_topics_name">如何评价郭麒麟在《给我一个十八岁》中的表现？<span class="rec_topics_label rec_topics_label_ad">广告</span></a>
+                    <span class="rec_topics_subtitle">品牌话题</span>
+                        
+            </li>
+            <li class="rec_topics">
+                    <a href="https://www.douban.com/gallery/topic/11891/?from=hot_topic_note" class="rec_topics_name">库布里克诞辰90周年</a>
+                    
+                    <span class="rec_topics_subtitle">新话题 · 6979人浏览</span>
+            </li>
+            <li class="rec_topics">
+                    <a href="https://www.douban.com/gallery/topic/10283/?from=hot_topic_note" class="rec_topics_name">死亡为什么让人恐惧？</a>
+                    
+                    <span class="rec_topics_subtitle">3136人浏览</span>
+            </li>
+            <li class="rec_topics">
+                    <a href="https://www.douban.com/gallery/topic/10453/?from=hot_topic_note" class="rec_topics_name">你向往的爱情是什么样子的呢？</a>
+                    
+                    <span class="rec_topics_subtitle">4181人浏览</span>
+            </li>
+            <li class="rec_topics">
+                    <a href="https://www.douban.com/gallery/topic/10491/?from=hot_topic_note" class="rec_topics_name">你什么时候决定要珍惜自己的身体了？</a>
+                    
+                    <span class="rec_topics_subtitle">2814人浏览</span>
+            </li>
+    </ul>
+</div>
+
+    <!-- douban ad begin -->
+    <div id="dale_personal_note_middle_right" style="margin-bottom: 20px;"></div>
+    <!-- douban ad end -->
+
+<div class="mod">
+
+</div>
+
+    <!-- douban app begin -->
+    <div id="dale_personal_note_inner_bottom"></div>
+    <div id="dale_personal_note_download_bottom"></div>
+    <!-- douban app end -->
+
+        </div>
+        <div class="extra">
+            
+    
+<!-- douban ad begin -->
+<div id="dale_personal_note_bottom_super_banner"></div>
+<script type="text/javascript">
+    (function (global) {
+        var body = global.document.body,
+            html = global.document.documentElement;
+
+        var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+        if (height >= 1000) {
+            (global.DoubanAdSlots = global.DoubanAdSlots || []).push('dale_personal_note_bottom_super_banner');
+        }
+    })(this);
+</script>
+<!-- douban ad end -->
+
+
+        </div>
+    </div>
+</div>
+
+        
+<div id="footer">
+    
+<span id="icp" class="fleft gray-link">
+    © 2005－2018 douban.com, all rights reserved 北京豆网科技有限公司
+</span>
+
+<a href="https://www.douban.com/hnypt/variformcyst.py" style="display: none;"></a>
+
+<span class="fright">
+    <a href="https://www.douban.com/about">关于豆瓣</a>
+    · <a href="https://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="https://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="https://www.douban.com/about?policy=disclaimer">免责声明</a>
+    
+    · <a href="https://help.douban.com/?app=main" target="_blank">帮助中心</a>
+    · <a href="https://www.douban.com/doubanapp/">移动应用</a>
+    · <a href="https://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+</div>
+
+    </div>
+    
+    
+
+    <script type="text/javascript" src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/af8fc251ae106c1.js"></script><div class="ui-overlay-mask" style="display:none;"><div class="ui-overlay-x"></div>                   <div class="ui-overlay-container">                   <a href="https://www.douban.com/note/647142163/?type=like#" class="ui-overlay-close" style="display:none;">×</a>   <div class="hd"></div>                     <div class="bd"></div>                   </div>                                     </div>
+    
+    <script src="./LNMP - Warning_ require()_ open_basedir restriction in effect错误解决方法_files/copy.js" type="text/javascript"></script>
+    
+
+
+
+
+    
+<script type="text/javascript">
+    (function (global) {
+        var newNode = global.document.createElement('script'),
+            existingNode = global.document.getElementsByTagName('script')[0],
+            adSource = '//erebor.douban.com/',
+            userId = '',
+            browserId = 'ZC-T25SE36o',
+            criteria = '3:/note/647142163/?type=like',
+            preview = '',
+            debug = false,
+            adSlots = ['dale_personal_note_middle_right', 'dale_personal_note_inner_bottom', 'dale_personal_note_download_bottom', 'dale_personal_note_top_right'];
+
+        global.DoubanAdRequest = {src: adSource, uid: userId, bid: browserId, crtr: criteria, prv: preview, debug: debug};
+        global.DoubanAdSlots = (global.DoubanAdSlots || []).concat(adSlots);
+
+        newNode.setAttribute('type', 'text/javascript');
+        newNode.setAttribute('src', 'https://img3.doubanio.com/f/adjs/cdc904d1376a43e44bbf399a0aff51973016cd77/ad.release.js');
+        newNode.setAttribute('async', true);
+        existingNode.parentNode.insertBefore(newNode, existingNode);
+    })(this);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+<!-- Google Tag Manager -->
+<noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-5WP579" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5WP579');</script>
+<!-- End Google Tag Manager -->
+
+
+<script type="text/javascript">
+var _paq = _paq || [];
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+    var p=(('https:' == document.location.protocol) ? 'https' : 'http'), u=p+'://fundin.douban.com/';
+    _paq.push(['setTrackerUrl', u+'piwik']);
+    _paq.push(['setSiteId', '100001']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript';
+    g.defer=true;
+    g.async=true;
+    g.src=p+'://img3.doubanio.com/dae/fundin/piwik.js';
+    s.parentNode.insertBefore(g,s);
+})();
+</script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-7019765-1']);
+_gaq.push(['_setCampNameKey', 'dcn']);
+_gaq.push(['_setCampSourceKey', 'dcs']);
+_gaq.push(['_setCampMediumKey', 'dcm']);
+_gaq.push(['_setCampTermKey', 'dct']);
+_gaq.push(['_setCampContentKey', 'dcc']);
+_gaq.push(['_addOrganic', 'baidu', 'word']);
+_gaq.push(['_addOrganic', 'soso', 'w']);
+_gaq.push(['_addOrganic', '3721', 'name']);
+_gaq.push(['_addOrganic', 'youdao', 'q']);
+_gaq.push(['_addOrganic', 'so.360.cn', 'q']);
+_gaq.push(['_addOrganic', 'vnet', 'kw']);
+_gaq.push(['_addOrganic', 'sogou', 'query']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣']);
+_gaq.push(['_addIgnoredOrganic', 'douban']);
+_gaq.push(['_addIgnoredOrganic', '豆瓣网']);
+_gaq.push(['_addIgnoredOrganic', 'www.douban.com']);
+_gaq.push(['_setDomainName', '.douban.com']);
+
+
+    _gaq.push(['_setCustomVar', 1, 'responsive_view_mode', 'desktop', 3]);
+
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+
+window._ga_init = function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+};
+if (window.addEventListener) {
+    window.addEventListener('load', _ga_init, false);
+} else {
+    window.attachEvent('onload', _ga_init);
+}
+</script>
+
+
+
+
+
+    <!-- brand10-docker-->
+
+  
+
+  <script>_SPLITTEST=''</script>
+
+
+
+
+
+<div class="dou-preview-image-popup" style="display: none;"></div><a href="https://www.douban.com/note/647142163/?type=like#" class="dou-preview-image-link-open" target="_preview_img" style="display: none;"></a></body></html>

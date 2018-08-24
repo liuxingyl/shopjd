@@ -1,0 +1,1 @@
+<iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="<? echo yii\helpers\Url::to(['index/iframe']) ?>" frameborder="0" data-id="index_v1.html" seamless></iframe>
